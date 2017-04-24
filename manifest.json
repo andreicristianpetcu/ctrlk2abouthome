@@ -1,0 +1,32 @@
+{
+    "name": "__MSG_appName__",
+    "version": "1.0.0",
+    "manifest_version": 2,
+    "description": "__MSG_appDescription__",
+   "homepage_url": "https://github.com/andreicristianpetcu/ctrlk2abouthome",
+    "default_locale": "en",
+    "permissions": [
+        "tabs",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "icons": {
+        "128": "images/icon-128.png"
+    },
+    "content_scripts": [{
+        "matches": [
+            "http://*/*",
+            "https://*/*"
+        ],
+        "js": [
+            "scripts/contentscript.js"
+        ],
+        "run_at": "document_start",
+        "all_frames": false
+    }],
+    "applications": {
+        "gecko": {
+            "id": "{34bb27fd-ec99-4896-9da0-0cd43ebeae67}"
+        }
+    }
+}

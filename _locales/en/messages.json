@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "Control+K to about:home",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "This is a WebExtension that maps Ctrl+K to about:home as it used to be in Firefox. The icon is CC0 from here https://pixabay.com/en/house-home-symbol-blank-chimney-305683/ ",
+    "description": "The description of the application"
+  }
+}
