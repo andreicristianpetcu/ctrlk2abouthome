@@ -1,21 +1,23 @@
 "use strict";
 window.addEventListener("keydown", keysPressed, false);
 window.addEventListener("keyup", keysReleased, false);
-var keys = {};
+var typed_keys = {};
 
 function keysPressed(e) {
-    const isCtrlOrdK = e.keyCode == 17 || e.keyCode == 75;
-    if (isCtrlOrdK) {
-        keys[e.keyCode] = true;
+    const isCtrl = e.keyCode == 17;
+    if (isCtrl) {
+        typed_keys = {};
     }
-    const isCtrlAndK = keys[17] && keys[75];
+    typed_keys[e.keyCode] = true;
+    const isCtrlAndK = typed_keys[17] && typed_keys[75] && Object.keys(typed_keys).length == 2;
+
     if (isCtrlAndK) {
-        keys = {};
+        typed_keys = {};
         e.preventDefault();
         window.location = "about:home";
     }
 }
 
 function keysReleased(e) {
-    keys = {};
+    typed_keys = {};
 }
